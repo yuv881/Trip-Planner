@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter, Navigate, Outlet } from "react-router-dom"
+import { RouterProvider, createHashRouter, Navigate, Outlet } from "react-router-dom"
 import Dashboard from "./pages/Dashboard.jsx"
 import Trip from "./pages/Trip.jsx"
 import All_Trips from "./pages/Trip/All_Trips.jsx"
@@ -14,7 +14,7 @@ const ProtectedRoute = () => {
     return user ? <Outlet /> : <Navigate to="/login" replace />;
 }
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: "/",
         element: <Navigate to="/dashboard" replace />,

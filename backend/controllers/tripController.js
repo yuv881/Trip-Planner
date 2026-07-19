@@ -45,6 +45,9 @@ export const createTrip = async (req, res) => {
         const savedTrip = await trip.save();
         res.status(201).json(savedTrip);
     } catch (error) {
+        if (error.code === 11000) {
+            return res.status(400).json({ message: 'A trip with this destination already exists. Please enter a unique destination.' });
+        }
         res.status(400).json({ message: error.message });
     }
 };

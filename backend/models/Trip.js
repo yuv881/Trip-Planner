@@ -46,6 +46,7 @@ const tripSchema = new mongoose.Schema({
     destination: {
         type: String,
         required: true,
+        unique: true,
         default: 'Unnamed Trip'
     },
     coverImage: {

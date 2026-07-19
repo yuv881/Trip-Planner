@@ -147,89 +147,98 @@ const TripCreationModal = ({ isOpen, onClose, onSuccess }) => {
     }
 
     const handleSubmit = async () => {
-        const durationDays = (startDate && endDate)
-            ? Math.ceil((new Date(endDate) - new Date(startDate)) / (1000 * 60 * 60 * 24)) + 1
-            : 1
+        try {
+            const durationDays = (startDate && endDate)
+                ? Math.ceil((new Date(endDate) - new Date(startDate)) / (1000 * 60 * 60 * 24)) + 1
+                : 1
 
-        let breakdown = budgetBreakdown
-        const sumBreakdown = budgetBreakdown.reduce((acc, cat) => acc + cat.amount, 0)
-        if (breakdown.length === 0 || sumBreakdown === 0) {
-            const dividedAmount = Math.round(Number(totalBudget) / 5)
-            breakdown = [
-                { category: "Accommodation", amount: dividedAmount },
-                { category: "Food & dining", amount: dividedAmount },
-                { category: "Activities & attractions", amount: dividedAmount },
-                { category: "Transportation", amount: dividedAmount },
-                { category: "Other", amount: dividedAmount }
-            ]
-        }
+            let breakdown = budgetBreakdown
+            const sumBreakdown = budgetBreakdown.reduce((acc, cat) => acc + cat.amount, 0)
+            if (breakdown.length === 0 || sumBreakdown === 0) {
+                const dividedAmount = Math.round(Number(totalBudget) / 5)
+                breakdown = [
+                    { category: "Accommodation", amount: dividedAmount },
+                    { category: "Food & dining", amount: dividedAmount },
+                    { category: "Activities & attractions", amount: dividedAmount },
+                    { category: "Transportation", amount: dividedAmount },
+                    { category: "Other", amount: dividedAmount }
+                ]
+            }
 
-        // Build outboundFlight details if entered
-        const outboundFlight = outboundAirline ? {
-            airline: outboundAirline,
-            flightNumber: outboundFlightNumber,
-            from: outboundFrom,
-            to: outboundTo,
-            departure: outboundDeparture
-        } : null
+            // Build outboundFlight details if entered
+            const outboundFlight = outboundAirline ? {
+                airline: outboundAirline,
+                flightNumber: outboundFlightNumber,
+                from: outboundFrom,
+                to: outboundTo,
+                departure: outboundDeparture
+            } : null
 
-        // Build returnFlight details if entered
-        const returnFlight = returnAirline ? {
-            airline: returnAirline,
-            flightNumber: returnFlightNumber,
-            from: returnFrom,
-            to: returnTo,
-            departure: returnDeparture
-        } : null
+            // Build returnFlight details if entered
+            const returnFlight = returnAirline ? {
+                airline: returnAirline,
+                flightNumber: returnFlightNumber,
+                from: returnFrom,
+                to: returnTo,
+                departure: returnDeparture
+            } : null
 
-        const newTrip = {
-            id: `trip_${Date.now()}`,
-            destination: destination.trim() || "Unnamed Trip",
-            coverImage,
-            startDate: startDate || "TBD",
-            endDate: endDate || "TBD",
-            durationDays,
-            status,
-            progress: getProgressValue(status),
-            budget: {
-                total: Number(totalBudget),
-                currency: "INR",
-                spent: status === "completed" ? Number(totalBudget) : Math.round(Number(totalBudget) * 0.2),
-                breakdown
-            },
-            travelers,
-            travelDetails: {
-                transportMode,
-                outboundFlight,
-                returnFlight,
-                accommodation: hotelName ? {
-                    name: hotelName,
-                    address: hotelAddress,
-                    checkIn: hotelCheckIn || null,
-                    checkOut: hotelCheckOut || null
-                } : { name: "TBD", address: "", checkIn: null, checkOut: null },
-                documents: {
-                    idProofValid: true,
-                    visaRequired: false,
-                    travelInsurance: false
-                },
-                emergencyContact: {
-                    name: travelers[1]?.name || travelers[0]?.name || "",
-                    phone: ""
-                },
-                localInfo: {
+            const newTrip = {
+                id: `trip_${Date.now()}`,
+                destination: destination.trim() || "Unnamed Trip",
+                coverImage,
+                startDate: startDate || "TBD",
+                endDate: endDate || "TBD",
+                durationDays,
+                status,
+                progress: getProgressValue(status),
+                budget: {
+                    total: Number(totalBudget),
                     currency: "INR",
-                    timeZone: "IST (UTC+5:30)",
-                    language: "Hindi, English"
-                }
-            },
-            itinerary: itineraryList,
-            tasks: []
-        }
+                    spent: status === "completed" ? Number(totalBudget) : Math.round(Number(totalBudget) * 0.2),
+                    breakdown
+                },
+                travelers,
+                travelDetails: {
+                    transportMode,
+                    outboundFlight,
+                    returnFlight,
+                    accommodation: hotelName ? {
+                        name: hotelName,
+                        address: hotelAddress,
+                        checkIn: hotelCheckIn || null,
+                        checkOut: hotelCheckOut || null
+                    } : { name: "TBD", address: "", checkIn: null, checkOut: null },
+                    documents: {
+                        idProofValid: true,
+                        visaRequired: false,
+                        travelInsurance: false
+                    },
+                    emergencyContact: {
+                        name: travelers[1]?.name || travelers[0]?.name || "",
+                        phone: ""
+                    },
+                    localInfo: {
+                        currency: "INR",
+                        timeZone: "IST (UTC+5:30)",
+                        language: "Hindi, English"
+                    }
+                },
+                itinerary: itineraryList,
+                tasks: []
+            }
 
-        await saveTrip(newTrip)
-        onSuccess()
-        onClose()
+            const saved = await saveTrip(newTrip)
+            if (!saved) {
+                alert("Failed to save trip in database. Please check backend connection and database settings.")
+                return
+            }
+            onSuccess()
+            onClose()
+        } catch (error) {
+            console.error("Error creating trip:", error)
+            alert("Error: " + error.message)
+        }
     }
 
     return (

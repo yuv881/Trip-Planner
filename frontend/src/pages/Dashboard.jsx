@@ -16,9 +16,9 @@ const Dashboard = () => {
     return (
         <div className="flex min-h-screen w-full bg-zinc-50 relative overflow-x-hidden">
             {/* Mobile Header Bar */}
-            <header className="md:hidden flex items-center justify-between px-4 py-3 bg-zinc-955 text-white w-full fixed top-0 left-0 z-40 border-b border-zinc-800">
+            <header className="md:hidden flex items-center justify-between px-4 py-3 bg-zinc-955 text-black w-full fixed top-0 left-0 z-40 border-b border-zinc-800">
                 <span className="font-extrabold text-sm tracking-wide">TRIP PLANNER</span>
-                <button 
+                <button
                     onClick={() => setIsSidebarOpen(true)}
                     className="p-1 text-zinc-350 hover:text-white focus:outline-hidden cursor-pointer"
                 >
@@ -32,11 +32,11 @@ const Dashboard = () => {
                 ${isSidebarOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none md:opacity-100 md:pointer-events-auto'}
             `}>
                 {/* Backdrop on mobile */}
-                <div 
+                <div
                     className="absolute inset-0 bg-black/45 md:hidden"
                     onClick={() => setIsSidebarOpen(false)}
                 />
-                
+
                 {/* Sidebar Box */}
                 <div className={`
                     w-64 h-full bg-zinc-950 text-white p-4 flex flex-col justify-between absolute left-0 top-0 transition-transform duration-300 md:relative md:translate-x-0 md:h-screen md:sticky md:top-0
@@ -45,7 +45,7 @@ const Dashboard = () => {
                     <div className="space-y-4 w-full">
                         <div className="flex items-center justify-between pb-4 border-b border-zinc-850 md:hidden">
                             <span className="font-bold text-[10px] uppercase tracking-wider text-zinc-400">Navigation</span>
-                            <button 
+                            <button
                                 onClick={() => setIsSidebarOpen(false)}
                                 className="p-1 hover:bg-zinc-850 rounded-lg text-zinc-400 hover:text-white"
                             >
@@ -69,7 +69,7 @@ const Dashboard = () => {
                                 <p className="text-[10px] text-zinc-500 truncate">{user?.email || ''}</p>
                             </div>
                         </div>
-                        <button 
+                        <button
                             onClick={handleLogout}
                             className="p-1.5 text-zinc-400 hover:text-rose-500 hover:bg-zinc-850/50 rounded-lg transition-colors cursor-pointer shrink-0"
                             title="Sign Out"
