@@ -24,7 +24,15 @@ const Register = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, username, email, password })
             });
-            const data = await res.json();
+
+            let data;
+            const contentType = res.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+                data = await res.json();
+            } else {
+                const errText = await res.text();
+                throw new Error(errText || `Server error: ${res.status}`);
+            }
 
             if (!res.ok) {
                 throw new Error(data.message || 'Registration failed');
