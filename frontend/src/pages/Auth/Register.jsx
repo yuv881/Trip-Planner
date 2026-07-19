@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { User, Mail, Lock, AlertCircle, ArrowRight, Eye, EyeOff } from 'lucide-react';
+import { API_BASE } from '../../config/api.js';
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -18,7 +19,7 @@ const Register = () => {
         setLoading(true);
 
         try {
-            const res = await fetch('http://localhost:5000/api/users/register', {
+            const res = await fetch(`${API_BASE}/api/users/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, username, email, password })

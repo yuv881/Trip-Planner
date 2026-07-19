@@ -1,3 +1,5 @@
+import { API_BASE } from '../config/api.js';
+
 const getAuthHeaders = () => {
     const userStr = localStorage.getItem('user');
     if (!userStr) return {};
@@ -9,13 +11,14 @@ const getAuthHeaders = () => {
             'x-user-username': user.username
         };
     } catch (e) {
+        console.log(e)
         return {};
     }
 };
 
 export const getTrips = async () => {
     try {
-        const res = await fetch('http://localhost:5000/api/trips', {
+        const res = await fetch(`${API_BASE}/api/trips`, {
             headers: getAuthHeaders()
         });
         if (!res.ok) {
@@ -30,7 +33,7 @@ export const getTrips = async () => {
 
 export const getTripById = async (id) => {
     try {
-        const res = await fetch(`http://localhost:5000/api/trips/${id}`, {
+        const res = await fetch(`${API_BASE}/api/trips/${id}`, {
             headers: getAuthHeaders()
         });
         if (!res.ok) {
@@ -45,7 +48,7 @@ export const getTripById = async (id) => {
 
 export const saveTrip = async (newTrip) => {
     try {
-        const res = await fetch('http://localhost:5000/api/trips', {
+        const res = await fetch(`${API_BASE}/api/trips`, {
             method: 'POST',
             headers: getAuthHeaders(),
             body: JSON.stringify(newTrip)

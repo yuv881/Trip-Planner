@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { X, Plus, Trash2, MapPin, Plane, Bed, Check, FileText, Image as ImageIcon } from "lucide-react"
 import { saveTrip } from "../../utils/storage.js"
+import { API_BASE } from "../../config/api.js"
 
 const TripCreationModal = ({ isOpen, onClose, onSuccess }) => {
     const [step, setStep] = useState(1)
@@ -65,7 +66,7 @@ const TripCreationModal = ({ isOpen, onClose, onSuccess }) => {
         formData.append("image", file)
 
         try {
-            const res = await fetch("http://localhost:5000/api/trips/upload", {
+            const res = await fetch(`${API_BASE}/api/trips/upload`, {
                 method: "POST",
                 body: formData
             })
