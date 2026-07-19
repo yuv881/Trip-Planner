@@ -53,7 +53,7 @@ const Dashboard = () => {
                             </button>
                         </div>
                         <div className="hidden md:block pb-4 mb-2 border-b border-zinc-850">
-                            <span className="font-extrabold text-lg tracking-wide">TRIP PLANNER</span>
+                            <Link to="/dashboard" className="font-extrabold text-lg tracking-wide text-white hover:text-zinc-250 transition-colors">TRIP PLANNER</Link>
                         </div>
                         <Sidebar onClose={() => setIsSidebarOpen(false)} />
                     </div>
