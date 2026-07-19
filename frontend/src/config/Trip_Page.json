@@ -1,0 +1,17 @@
+[
+    {
+        "label": "All Trips",
+        "icon": "Bus",
+        "link": "/dashboard/trips/all"
+    },
+    {
+        "label": "Pending Trips",
+        "icon": "Clock",
+        "link": "/dashboard/trips/pending"
+    },
+    {
+        "label": "Completed Trips",
+        "icon": "CalendarCheck",
+        "link": "/dashboard/trips/completed"
+    }
+]

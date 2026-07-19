@@ -1,0 +1,12 @@
+[
+    {
+        "label": "Dashboard",
+        "icon": "Home",
+        "link": "/dashboard"
+    },
+    {
+        "label": "Trips",
+        "icon": "Map",
+        "link": "/dashboard/trips"
+    }
+]

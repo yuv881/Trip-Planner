@@ -1,0 +1,589 @@
+{
+    "trips": [
+        {
+            "id": "trip_001",
+            "destination": "Indore, Madhya Pradesh",
+            "startDate": "2026-06-28",
+            "endDate": "2026-06-28",
+            "durationDays": 1,
+            "status": "completed",
+            "progress": 100,
+            "budget": {
+                "total": 12000,
+                "currency": "INR",
+                "spent": 10500,
+                "breakdown": [
+                    {
+                        "category": "Travel",
+                        "amount": 2050
+                    },
+                    {
+                        "category": "Food & dining",
+                        "amount": 2000
+                    },
+                    {
+                        "category": "Activities & attractions",
+                        "amount": 4800
+                    },
+                    {
+                        "category": "Transportation",
+                        "amount": 1000
+                    },
+                    {
+                        "category": "Other",
+                        "amount": 100
+                    }
+                ]
+            },
+            "travelers": [
+                {
+                    "id": "user_01",
+                    "name": "You",
+                    "role": "organizer"
+                },
+                {
+                    "id": "user_02",
+                    "name": "Aarti Patidar",
+                    "role": "member"
+                },
+                {
+                    "id": "user_03",
+                    "name": "Khushi Namdev",
+                    "role": "member"
+                }
+            ],
+            "travelDetails": {
+                "outboundFlight": {
+                    "airline": "IndiGo",
+                    "flightNumber": "6E 234",
+                    "from": "Mandsaur",
+                    "to": "Indore",
+                    "departure": "2026-06-28T06:00:00"
+                },
+                "returnFlight": {
+                    "airline": "IndiGo",
+                    "flightNumber": "6E 235",
+                    "from": "Indore",
+                    "to": "Mandsaur",
+                    "departure": "2026-06-29T06:00:00"
+                },
+                "localInfo": {
+                    "currency": "INR",
+                    "timeZone": "IST (UTC+5:30)",
+                    "language": "Hindi"
+                }
+            },
+            "itinerary": [
+                {
+                    "day": 1,
+                    "date": "2024-06-15",
+                    "title": "Shimcha",
+                    "description": "Check in, relax at Baga Beach, sunset walk",
+                    "location": "Shimcha Island",
+                    "budget": 4800,
+                    "status": "completed"
+                },
+                {
+                    "day": 2,
+                    "date": "2024-06-16",
+                    "title": "Phoenix",
+                    "description": "Visit Phoenix Citadel Mall",
+                    "location": "Phoenix Citadel Mall",
+                    "budget": 1100,
+                    "status": "completed"
+                },
+                {
+                    "day": 3,
+                    "date": "2024-06-17",
+                    "title": "Chappan shops",
+                    "description": "Enjoy local food at chappan shops",
+                    "location": "Chappan shops",
+                    "budget": 500,
+                    "status": "completed"
+                }
+            ],
+            "tasks": []
+        },
+        {
+            "id": "trip_001",
+            "destination": "Goa, India",
+            "startDate": "2024-06-15",
+            "endDate": "2024-06-20",
+            "durationDays": 5,
+            "status": "in_progress",
+            "progress": 60,
+            "budget": {
+                "total": 35000,
+                "currency": "INR",
+                "spent": 21000,
+                "breakdown": [
+                    {
+                        "category": "Accommodation",
+                        "amount": 14000
+                    },
+                    {
+                        "category": "Food & dining",
+                        "amount": 8000
+                    },
+                    {
+                        "category": "Activities & attractions",
+                        "amount": 7000
+                    },
+                    {
+                        "category": "Transportation",
+                        "amount": 5000
+                    },
+                    {
+                        "category": "Other",
+                        "amount": 1000
+                    }
+                ]
+            },
+            "travelers": [
+                {
+                    "id": "user_01",
+                    "name": "You",
+                    "role": "organizer"
+                },
+                {
+                    "id": "user_02",
+                    "name": "Rohan Mehta",
+                    "role": "member"
+                }
+            ],
+            "travelDetails": {
+                "outboundFlight": {
+                    "airline": "IndiGo",
+                    "flightNumber": "6E 234",
+                    "from": "BOM",
+                    "to": "GOI",
+                    "departure": "2024-06-15T09:30:00"
+                },
+                "returnFlight": {
+                    "airline": "IndiGo",
+                    "flightNumber": "6E 235",
+                    "from": "GOI",
+                    "to": "BOM",
+                    "departure": "2024-06-20T18:45:00"
+                },
+                "accommodation": {
+                    "name": "Taj Fort Aguada Resort",
+                    "address": "Sinquerim, Bardez, Goa",
+                    "checkIn": "2024-06-15T14:00:00",
+                    "checkOut": "2024-06-20T11:00:00"
+                },
+                "documents": {
+                    "idProofValid": true,
+                    "visaRequired": false,
+                    "travelInsurance": true
+                },
+                "emergencyContact": {
+                    "name": "Rohan Mehta",
+                    "phone": "+91 98765 43210"
+                },
+                "localInfo": {
+                    "currency": "INR",
+                    "timeZone": "IST (UTC+5:30)",
+                    "language": "Konkani, Hindi, English"
+                }
+            },
+            "itinerary": [
+                {
+                    "day": 1,
+                    "date": "2024-06-15",
+                    "title": "Arrival & beach relax",
+                    "description": "Check in, relax at Baga Beach, sunset walk",
+                    "location": "Baga Beach",
+                    "budget": 2000,
+                    "status": "completed"
+                },
+                {
+                    "day": 2,
+                    "date": "2024-06-16",
+                    "title": "Old Goa churches",
+                    "description": "Visit Basilica of Bom Jesus and Se Cathedral",
+                    "location": "Old Goa",
+                    "budget": 1500,
+                    "status": "completed"
+                },
+                {
+                    "day": 3,
+                    "date": "2024-06-17",
+                    "title": "Water sports day",
+                    "description": "Parasailing and jet skiing at Calangute",
+                    "location": "Calangute Beach",
+                    "budget": 3500,
+                    "status": "pending"
+                }
+            ],
+            "tasks": [
+                {
+                    "id": "task_01",
+                    "title": "Book flights",
+                    "done": true
+                },
+                {
+                    "id": "task_02",
+                    "title": "Reserve resort",
+                    "done": true
+                },
+                {
+                    "id": "task_03",
+                    "title": "Rent scooter",
+                    "done": false
+                },
+                {
+                    "id": "task_04",
+                    "title": "Get travel insurance",
+                    "done": true
+                }
+            ]
+        },
+        {
+            "id": "trip_002",
+            "destination": "Jaipur, Rajasthan",
+            "startDate": "2024-07-10",
+            "endDate": "2024-07-14",
+            "durationDays": 4,
+            "status": "planning",
+            "progress": 35,
+            "budget": {
+                "total": 22000,
+                "currency": "INR",
+                "spent": 7700,
+                "breakdown": [
+                    {
+                        "category": "Accommodation",
+                        "amount": 9000
+                    },
+                    {
+                        "category": "Food & dining",
+                        "amount": 5000
+                    },
+                    {
+                        "category": "Activities & attractions",
+                        "amount": 4500
+                    },
+                    {
+                        "category": "Transportation",
+                        "amount": 3000
+                    },
+                    {
+                        "category": "Other",
+                        "amount": 500
+                    }
+                ]
+            },
+            "travelers": [
+                {
+                    "id": "user_01",
+                    "name": "You",
+                    "role": "organizer"
+                }
+            ],
+            "travelDetails": {
+                "outboundFlight": {
+                    "airline": "Air India",
+                    "flightNumber": "AI 472",
+                    "from": "DEL",
+                    "to": "JAI",
+                    "departure": "2024-07-10T08:00:00"
+                },
+                "returnFlight": {
+                    "airline": "Air India",
+                    "flightNumber": "AI 473",
+                    "from": "JAI",
+                    "to": "DEL",
+                    "departure": "2024-07-14T20:15:00"
+                },
+                "accommodation": {
+                    "name": "Alsisar Haveli",
+                    "address": "Sansar Chandra Road, Jaipur",
+                    "checkIn": "2024-07-10T13:00:00",
+                    "checkOut": "2024-07-14T11:00:00"
+                },
+                "documents": {
+                    "idProofValid": true,
+                    "visaRequired": false,
+                    "travelInsurance": false
+                },
+                "emergencyContact": {
+                    "name": "Neha Sharma",
+                    "phone": "+91 91234 56780"
+                },
+                "localInfo": {
+                    "currency": "INR",
+                    "timeZone": "IST (UTC+5:30)",
+                    "language": "Hindi, Rajasthani, English"
+                }
+            },
+            "itinerary": [
+                {
+                    "day": 1,
+                    "date": "2024-07-10",
+                    "title": "Arrival & Amber Fort",
+                    "description": "Check in, evening visit to Amber Fort light show",
+                    "location": "Amber Fort",
+                    "budget": 1200,
+                    "status": "pending"
+                },
+                {
+                    "day": 2,
+                    "date": "2024-07-11",
+                    "title": "City Palace & Hawa Mahal",
+                    "description": "Explore City Palace, photo stop at Hawa Mahal",
+                    "location": "City Palace",
+                    "budget": 1000,
+                    "status": "pending"
+                },
+                {
+                    "day": 3,
+                    "date": "2024-07-12",
+                    "title": "Jantar Mantar & local bazaars",
+                    "description": "Visit Jantar Mantar, shop at Johari Bazaar",
+                    "location": "Johari Bazaar",
+                    "budget": 2500,
+                    "status": "pending"
+                }
+            ],
+            "tasks": [
+                {
+                    "id": "task_01",
+                    "title": "Book flights",
+                    "done": true
+                },
+                {
+                    "id": "task_02",
+                    "title": "Reserve haveli stay",
+                    "done": true
+                },
+                {
+                    "id": "task_03",
+                    "title": "Book fort entry tickets",
+                    "done": false
+                },
+                {
+                    "id": "task_04",
+                    "title": "Arrange local cab",
+                    "done": false
+                }
+            ]
+        },
+        {
+            "id": "trip_003",
+            "destination": "Manali, Himachal Pradesh",
+            "startDate": "2024-08-05",
+            "endDate": "2024-08-10",
+            "durationDays": 5,
+            "status": "not_started",
+            "progress": 0,
+            "budget": {
+                "total": 28000,
+                "currency": "INR",
+                "spent": 0,
+                "breakdown": [
+                    {
+                        "category": "Accommodation",
+                        "amount": 10000
+                    },
+                    {
+                        "category": "Food & dining",
+                        "amount": 6000
+                    },
+                    {
+                        "category": "Activities & attractions",
+                        "amount": 7000
+                    },
+                    {
+                        "category": "Transportation",
+                        "amount": 4500
+                    },
+                    {
+                        "category": "Other",
+                        "amount": 500
+                    }
+                ]
+            },
+            "travelers": [
+                {
+                    "id": "user_01",
+                    "name": "You",
+                    "role": "organizer"
+                },
+                {
+                    "id": "user_03",
+                    "name": "Aditya Rao",
+                    "role": "member"
+                },
+                {
+                    "id": "user_04",
+                    "name": "Kavya Nair",
+                    "role": "member"
+                }
+            ],
+            "travelDetails": {
+                "outboundFlight": null,
+                "returnFlight": null,
+                "accommodation": {
+                    "name": "TBD",
+                    "address": "",
+                    "checkIn": null,
+                    "checkOut": null
+                },
+                "documents": {
+                    "idProofValid": true,
+                    "visaRequired": false,
+                    "travelInsurance": false
+                },
+                "emergencyContact": {
+                    "name": "",
+                    "phone": ""
+                },
+                "localInfo": {
+                    "currency": "INR",
+                    "timeZone": "IST (UTC+5:30)",
+                    "language": "Hindi, Pahari, English"
+                }
+            },
+            "itinerary": [],
+            "tasks": [
+                {
+                    "id": "task_01",
+                    "title": "Book volvo bus or flight to Kullu",
+                    "done": false
+                },
+                {
+                    "id": "task_02",
+                    "title": "Reserve hotel",
+                    "done": false
+                },
+                {
+                    "id": "task_03",
+                    "title": "Plan Solang Valley & Rohtang trip",
+                    "done": false
+                }
+            ]
+        },
+        {
+            "id": "trip_004",
+            "destination": "Kerala Backwaters, Alleppey",
+            "startDate": "2024-09-12",
+            "endDate": "2024-09-16",
+            "durationDays": 4,
+            "status": "completed",
+            "progress": 100,
+            "budget": {
+                "total": 26000,
+                "currency": "INR",
+                "spent": 25400,
+                "breakdown": [
+                    {
+                        "category": "Accommodation",
+                        "amount": 12000
+                    },
+                    {
+                        "category": "Food & dining",
+                        "amount": 6000
+                    },
+                    {
+                        "category": "Activities & attractions",
+                        "amount": 5000
+                    },
+                    {
+                        "category": "Transportation",
+                        "amount": 2000
+                    },
+                    {
+                        "category": "Other",
+                        "amount": 400
+                    }
+                ]
+            },
+            "travelers": [
+                {
+                    "id": "user_01",
+                    "name": "You",
+                    "role": "organizer"
+                },
+                {
+                    "id": "user_02",
+                    "name": "Rohan Mehta",
+                    "role": "member"
+                }
+            ],
+            "travelDetails": {
+                "outboundFlight": {
+                    "airline": "SpiceJet",
+                    "flightNumber": "SG 145",
+                    "from": "BLR",
+                    "to": "COK",
+                    "departure": "2024-09-12T07:20:00"
+                },
+                "returnFlight": {
+                    "airline": "SpiceJet",
+                    "flightNumber": "SG 146",
+                    "from": "COK",
+                    "to": "BLR",
+                    "departure": "2024-09-16T19:10:00"
+                },
+                "accommodation": {
+                    "name": "Houseboat - Lake Palace Cruises",
+                    "address": "Alleppey Backwaters, Kerala",
+                    "checkIn": "2024-09-12T12:00:00",
+                    "checkOut": "2024-09-16T10:00:00"
+                },
+                "documents": {
+                    "idProofValid": true,
+                    "visaRequired": false,
+                    "travelInsurance": true
+                },
+                "emergencyContact": {
+                    "name": "Rohan Mehta",
+                    "phone": "+91 98765 43210"
+                },
+                "localInfo": {
+                    "currency": "INR",
+                    "timeZone": "IST (UTC+5:30)",
+                    "language": "Malayalam, English"
+                }
+            },
+            "itinerary": [
+                {
+                    "day": 1,
+                    "date": "2024-09-12",
+                    "title": "Houseboat check-in",
+                    "description": "Board houseboat, cruise through backwaters",
+                    "location": "Alleppey",
+                    "budget": 2000,
+                    "status": "completed"
+                },
+                {
+                    "day": 2,
+                    "date": "2024-09-13",
+                    "title": "Kumarakom bird sanctuary",
+                    "description": "Visit Kumarakom Bird Sanctuary and village walk",
+                    "location": "Kumarakom",
+                    "budget": 1500,
+                    "status": "completed"
+                }
+            ],
+            "tasks": [
+                {
+                    "id": "task_01",
+                    "title": "Book flights",
+                    "done": true
+                },
+                {
+                    "id": "task_02",
+                    "title": "Reserve houseboat",
+                    "done": true
+                },
+                {
+                    "id": "task_03",
+                    "title": "Get travel insurance",
+                    "done": true
+                }
+            ]
+        }
+    ]
+}
