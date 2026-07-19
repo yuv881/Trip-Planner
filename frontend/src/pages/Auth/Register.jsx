@@ -31,7 +31,7 @@ const Register = () => {
                 data = await res.json();
             } else {
                 const errText = await res.text();
-                throw new Error(errText || `Server error: ${res.status}`);
+                throw new Error(errText.slice(0, 100) || `Server error: ${res.status}`);
             }
 
             if (!res.ok) {
