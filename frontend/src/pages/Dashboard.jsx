@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Outlet, useNavigate, Link } from 'react-router-dom'
 import Sidebar from '../components/Sidebar.jsx'
 import { Menu, X, LogOut } from 'lucide-react'
 
@@ -17,7 +17,7 @@ const Dashboard = () => {
         <div className="flex min-h-screen w-full bg-zinc-50 relative overflow-x-hidden">
             {/* Mobile Header Bar */}
             <header className="md:hidden flex items-center justify-between px-4 py-3 bg-zinc-900 text-white w-full fixed top-0 left-0 z-40 border-b border-zinc-800">
-                <span className="font-extrabold text-sm tracking-wide">TRIP PLANNER</span>
+                <Link to='/dashboard' className="font-extrabold text-sm tracking-wide">TRIP PLANNER</Link>
                 <button
                     onClick={() => setIsSidebarOpen(true)}
                     className="p-1 text-zinc-350 hover:text-white focus:outline-hidden cursor-pointer"
